@@ -1,26 +1,31 @@
 pipeline {
-      agent { dockerfile true }
-      stage('SonarQube analysis') {
+    agent any
 
-            environment {
-
-                scannerHome = tool 'sonar_scanner'
-
-            }
-
+    stages {
+        stage('Build') {
             steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
 
-                script{
 
-                    echo '=========== SonarQube analysis ============'
-
-                    withSonarQubeEnv('SonarQube') {
-
-                        sh '${scannerHome}/bin/sonar-scanner --version'
-
-                    }
-
-                }
-
-      }
+node {
+  stage('SonarQ') {
+    def scannerHome = tool 'SonarQScanner';
+    withSonarQubeEnv() {
+      sh "${scannerHome}/bin/sonar-scanner"
+    }
+  }
 }
