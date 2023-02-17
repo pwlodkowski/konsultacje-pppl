@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('SonarQ') {
+        stage('Analize') {
             steps {
                 echo 'Analize..'
                 sh "~/Workspace/konsultacje-pppl/sonar.sh"
