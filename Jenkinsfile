@@ -5,7 +5,7 @@ pipeline {
         stage('Analize') {
             steps {
                 echo 'Analize..'
-                sh "sudo ./sonar.sh"
+                sh 'sudo /sonar.sh'
             }
         }
         stage('Build') {
