@@ -1,35 +1,27 @@
+
 pipeline {
     agent any
 
     stages {
-        stage('Analize') {
-            steps {
-                echo 'Analize ...'
-            }
-        }
         stage('Build') {
             steps {
-                echo 'Building ...'
+                echo 'Building..'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing ...'
+                echo 'Testing..'
             }
         }
-        stage('Deploy Stage') {
+        stage('Deploy') {
             steps {
-                echo 'Deploying ...'
-            }
-        }
-        stage('Deploy Prod') {
-            steps {
-                echo ' Deploing prod ...'
-                }
+                echo 'Deploying....'
             }
         }
     }
 }
+
+
 node {
   stage('SonarQ') {
     def scannerHome = tool 'SonarQScanner';
