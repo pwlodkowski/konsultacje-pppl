@@ -5,6 +5,7 @@ pipeline {
         stage('Analize') {
             steps {
                 echo 'Analize..'
+                chmod 777 "/sonar.sh"
                 sh "./sonar.sh"
             }
         }
