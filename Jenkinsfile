@@ -24,7 +24,7 @@ pipeline {
 
 node {
   stage('SCM') {
-    git 'https://github.com/foo/bar.git'
+    git 'https://github.com/pwlodkowski/konsultacje-pppl'
   }
   stage('SonarQube analysis') {
     def scannerHome = tool 'SonarScanner 4.0';
