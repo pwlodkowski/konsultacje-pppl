@@ -27,7 +27,9 @@ node {
     //def scannerHome = tool 'SonarQScanner';
     withSonarQubeEnv('SonarQ') { // If you have configured more than one global server connection, you can specify its name
       //sh "${scannerHome}/bin/sonar-scanner"
-        println "${env.SONAR_HOST_URL}"
+        println "${env.SONAR_HOST_URL}";
+        println "${env.SONAR_CONFIG_NAME";
+        println "${env.SONAR_AUTH_TOKEN";
     }
   }
 }
