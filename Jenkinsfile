@@ -5,7 +5,7 @@ pipeline {
         stage('Analize') {
             steps {
                 echo 'Analize..'
-                sh "~/Workspace/konsultacje-pppl/sonar.sh"
+                sh "./sonar.sh"
             }
         }
         stage('Build') {
