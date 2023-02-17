@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('SonarQ') {
             steps {
-                echo 'Building..'
+                echo 'Analize..'
+                sh "~/Workspace/konsultacje-pppl/sonar.sh"
             }
         }
         stage('Build') {
