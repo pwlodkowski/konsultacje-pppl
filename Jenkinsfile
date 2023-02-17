@@ -1,6 +1,3 @@
-## --------------
-## Konsultacje PPL
-## --------------
 pipeline {
     agent { label 'test' }
     stages {
