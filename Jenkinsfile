@@ -1,64 +1,23 @@
+## ------------
+## Normal Stage
+## ------------
 pipeline {
     agent { label 'test' }
     stages {
-        stage('Normal') {
+        stage('Build') {
             steps {
-                sh 'echo "stage one"'
+                sh 'echo "building your code"'
             }
         }
-        stage('Parallel') {
-            parallel {
-                stage('paraINpara') {
-                    steps {
-                        sh 'echo "nesting parallel not supported"'
-                    }
-                }
-                stage('seqINpara') {
-                    stages {
-                        stage('one') {
-                            steps {
-                                echo "stage one"
-                            }
-                        }
-                        stage('two') {
-                            steps {
-                                echo "stage one"
-                            }
-                        }
-                    }    
-                }
+        stage('Test') {
+            steps {
+                sh 'echo "testing your code"'
             }
         }
-        stage('Sequestial') {
-            stages {
-                stage('seqINseq') {
-                    stages {
-                        stage('one') {
-                            steps {
-                                echo "stage one"
-                            }
-                        }
-                        stage('two') {
-                            steps {
-                                echo "stage one"
-                            }
-                        }
-                    }  
-                }
-                stage('paraINseq') {
-                    parallel {
-                        stage('one') {
-                            steps {
-                                echo "stage one"
-                            }
-                        }
-                        stage('two') {
-                            steps {
-                                echo "stage one"
-                            }
-                        }
-                    }
-                }
+        stage('Deploy') {
+            steps {
+                sh 'echo "approval required"'
+                sh 'echo "deploying your code"'
             }
         }
     }
