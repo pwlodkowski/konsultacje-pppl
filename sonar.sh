@@ -1,6 +1,5 @@
 #!/bin/sh
 cd ~/Workspace/konsultacje-pppl/
-chmod 777 ./sonar.sh
 sonar-scanner \
   -Dsonar.projectKey=konsultacje-opl \
   -Dsonar.sources=. \
