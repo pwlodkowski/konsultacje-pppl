@@ -1,3 +1,5 @@
+#!/bin/sh
+cd ~/Workspace/konsultacje-pppl/
 sonar-scanner \
   -Dsonar.projectKey=konsultacje-opl \
   -Dsonar.sources=. \
