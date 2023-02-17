@@ -1,1 +1,3 @@
-<?=helloworld?>
+<?php 
+echo 'helloworld';
+?>
