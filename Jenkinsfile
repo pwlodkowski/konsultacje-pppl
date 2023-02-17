@@ -4,31 +4,37 @@ pipeline {
     stages {
         stage('Analize') {
             steps {
-                echo 'Analize..'
+                echo 'Analize ...'
             }
         }
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Building ...'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'Testing ...'
             }
         }
-        stage('Deploy') {
+        stage('Deploy Stage') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying ...'
             }
         }
-        stage('SonarQ') {
+        stage('Deploy Prod') {
             steps {
-                def scannerHome = tool 'SonarQScanner';
-                withSonarQubeEnv() {
-                sh "${scannerHome}/bin/sonar-scanner"
+                echo ' Deploing prod ...'
                 }
             }
         }
     }
+}
+node {
+  stage('SonarQ') {
+    def scannerHome = tool 'SonarQScanner';
+    withSonarQubeEnv() {
+      sh "${scannerHome}/bin/sonar-scanner"
+    }
+  }
 }
