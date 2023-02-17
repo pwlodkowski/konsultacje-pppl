@@ -5,8 +5,6 @@ pipeline {
         stage('Analize') {
             steps {
                 echo 'Analize..'
-                sh "chmod +x -R ${env.WORKSPACE}"
-                sh "./sonar.sh"
             }
         }
         stage('Build') {
