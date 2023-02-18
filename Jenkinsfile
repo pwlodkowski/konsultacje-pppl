@@ -22,7 +22,7 @@ pipeline {
 
 
 node {
-  stage('SonarQ') {
+  stage('SonarQube') {
     def scannerHome = tool 'SonarQScanner';
     withSonarQubeEnv() {
       sh "${scannerHome}/bin/sonar-scanner"
